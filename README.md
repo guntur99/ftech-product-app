@@ -3,7 +3,7 @@
 
 
 
-- **[Postman]([https://vehikl.com](https://documenter.getpostman.com/view/3661528/2s9YC2zYnK)/)**
+- **[Postman](https://documenter.getpostman.com/view/3661528/2s9YC2zYnK)**
 - **[Tighten Co.](https://tighten.co)**
 - **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
 - **[64 Robots](https://64robots.com)**
