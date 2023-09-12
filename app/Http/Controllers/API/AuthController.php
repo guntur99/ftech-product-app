@@ -15,13 +15,13 @@ class AuthController extends Controller
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
 
-    public function login(Request $request)
+    public function login()
     {
-        $request->validate([
+        request()->validate([
             'email'     => 'required|string|email',
             'password'  => 'required|string',
         ]);
-        $credentials = $request->only('email', 'password');
+        $credentials = request()->only('email', 'password');
         $token = Auth::attempt($credentials);
 
         if (!$token) {
@@ -40,9 +40,21 @@ class AuthController extends Controller
         ]);
     }
 
-    public function register(Request $request)
+    public function register()
     {
-        $request->validate([
+
+        $emails = User::pluck('email')->toArray();
+        $email  = request()->email;
+        $exist  = in_array($email, $emails);
+
+        if ($exist) {
+
+            return response()->json([
+                'message'   => 'User is exist, change your email!'
+            ]);
+        }
+
+        request()->validate([
             'first_name'    => 'required|string|max:255',
             'last_name'     => 'required|string|max:255',
             'email'         => 'required|string|email|max:255|unique:users',
@@ -51,11 +63,11 @@ class AuthController extends Controller
         ]);
 
         $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name'  => $request->last_name,
-            'email'      => $request->email,
-            'phone'      => $request->phone,
-            'password'   => Hash::make($request->password),
+            'first_name' => request()->first_name,
+            'last_name'  => request()->last_name,
+            'email'      => request()->email,
+            'phone'      => request()->phone,
+            'password'   => Hash::make(request()->password),
         ]);
 
         return response()->json([
