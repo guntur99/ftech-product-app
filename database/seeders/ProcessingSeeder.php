@@ -13,7 +13,7 @@ class ProcessingSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('tasteds')->insert([
+        DB::table('processings')->insert([
             [
                 'name' => 'Honey White',
             ],
