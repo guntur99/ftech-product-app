@@ -42,7 +42,6 @@ class AuthController extends Controller
 
     public function register()
     {
-
         $emails = User::pluck('email')->toArray();
         $email  = request()->email;
         $exist  = in_array($email, $emails);
