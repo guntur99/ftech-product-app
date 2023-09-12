@@ -29,6 +29,6 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::controller(ProductController::class)->group(function () {
     Route::get('products', 'products');
-    // Route::get('product/{id}', 'show');
-    // Route::post('product/create', 'store');
+    Route::get('product/{id}', 'show');
+    Route::post('product/store', 'store');
 });

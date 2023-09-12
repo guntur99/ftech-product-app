@@ -5,12 +5,10 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ProductSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         DB::table('products')->insert([
@@ -26,6 +24,7 @@ class ProductSeeder extends Seeder
                 'roast_level_id'    => 1,
                 'tasted_id'         => 1,
                 'processing_id'     => 1,
+                'created_at'        => $this->now,
             ],
             [
                 'name'              => 'Almond Biscuit',
@@ -39,6 +38,7 @@ class ProductSeeder extends Seeder
                 'roast_level_id'    => 1,
                 'tasted_id'         => 2,
                 'processing_id'     => 2,
+                'created_at'        => $this->now,
             ],
             [
                 'name'              => 'Aceh Gayo Coffee Beans...',
@@ -52,6 +52,7 @@ class ProductSeeder extends Seeder
                 'roast_level_id'    => 2,
                 'tasted_id'         => 3,
                 'processing_id'     => 3,
+                'created_at'        => $this->now,
             ],
             [
                 'name'              => 'Blackpearl Coffee Beans',
@@ -65,6 +66,7 @@ class ProductSeeder extends Seeder
                 'roast_level_id'    => 1,
                 'tasted_id'         => 3,
                 'processing_id'     => 3,
+                'created_at'        => $this->now,
             ],
             [
                 'name'              => 'Bokasso #3',
@@ -78,6 +80,7 @@ class ProductSeeder extends Seeder
                 'roast_level_id'    => 3,
                 'tasted_id'         => 4,
                 'processing_id'     => 4,
+                'created_at'        => $this->now,
             ],
             [
                 'name'              => 'Ciwidey West Java Frinsa',
@@ -91,6 +94,7 @@ class ProductSeeder extends Seeder
                 'roast_level_id'    => 1,
                 'tasted_id'         => 3,
                 'processing_id'     => 1,
+                'created_at'        => $this->now,
             ]
         ]);
     }
