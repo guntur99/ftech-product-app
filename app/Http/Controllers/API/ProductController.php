@@ -18,7 +18,16 @@ class ProductController extends Controller
 
     public function products()
     {
-        $products = Product::with('thumbnails')->with('rates')->get();
+        $products = Product::with('thumbnails')
+                    ->with('shop')
+                    ->with('origin')
+                    ->with('species')
+                    ->with('roastLevel')
+                    ->with('tasted')
+                    ->with('processing')
+                    ->with('rates')
+                    ->get();
+
         return response()->json([
             'message'   => 'Get All Product successfully',
             'products'  => $products
@@ -81,12 +90,14 @@ class ProductController extends Controller
 
     public function show(string $id)
     {
-        $product = Product::with('shop')
+        $product = Product::with('thumbnails')
+                    ->with('shop')
                     ->with('origin')
                     ->with('species')
                     ->with('roastLevel')
                     ->with('tasted')
                     ->with('processing')
+                    ->with('rates')
                     ->where('id', $id)
                     ->get();
 
