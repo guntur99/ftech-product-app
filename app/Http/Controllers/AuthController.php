@@ -13,7 +13,7 @@ class AuthController extends Controller
 
     public function loginStore()
     {
-        return view('product.index');
+        return redirect()->route('product.index');
     }
 
     public function registerIndex()
@@ -23,7 +23,7 @@ class AuthController extends Controller
 
     public function registerStore()
     {
-        return view('product.index');
+        return redirect()->route('product.index');
     }
 
     public function show(string $id)
