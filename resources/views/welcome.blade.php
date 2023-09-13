@@ -51,7 +51,7 @@
                                 <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Postman API Docs</h2>
 
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
+                                    Dokumentasi API dengan spesifikasi untuk Registrasi, Login, List Product dan Detail Product.
                                 </p>
                             </div>
 
@@ -71,7 +71,7 @@
                                 <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Github Repo</h2>
 
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
+                                    Repositori yang berada di GitHub untuk test Folkatech yang berisi Rest API untuk Registrasi, Login, List Product dan Detail Product.
                                 </p>
                             </div>
 
