@@ -15,12 +15,12 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', [AuthController::class, 'loginIndex'])->name('login.index');
-Route::post('login', [AuthController::class, 'loginStore'])->name('login');
+Route::get('login', [AuthController::class, 'loginIndex'])->name('login.index');
+Route::post('login/store', [AuthController::class, 'loginStore'])->name('login');
 Route::get('register', [AuthController::class, 'registerIndex'])->name('register.index');
 Route::post('register/store', [AuthController::class, 'registerStore'])->name('register');
 
