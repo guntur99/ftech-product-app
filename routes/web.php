@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+// use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [AuthController::class, 'loginIndex'])->name('login.index');
+Route::post('login', [AuthController::class, 'loginStore'])->name('login');
+Route::get('register', [AuthController::class, 'registerIndex'])->name('register.index');
+Route::post('register/store', [AuthController::class, 'registerStore'])->name('register');
